@@ -35,7 +35,7 @@ vector<int> compareTriplets(vector<int> a, vector<int> b) {
         else if (bobTemp > aliceTemp) {
             bobScore++;
         }
-        else { //if scores
+        else { //if scores are ==, then do nothing.
         }
     }
 
@@ -59,8 +59,9 @@ int main()
 
     for (int i = 0; i < 3; i++) {
         int a_item = stoi(a_temp[i]);
-
-        a[i] = a_item;
+        if (a_item >= 1 && a_item <= 100) {
+            a[i] = a_item;
+        }
     }
 
     string b_temp_temp;
@@ -72,8 +73,9 @@ int main()
 
     for (int i = 0; i < 3; i++) {
         int b_item = stoi(b_temp[i]);
-
-        b[i] = b_item;
+        if (b_item >= 1 && b_item <= 100) {
+            b[i] = b_item;
+        }
     }
 
     vector<int> result = compareTriplets(a, b);
