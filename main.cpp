@@ -17,6 +17,17 @@ vector<string> split(const string &);
 
 vector<int> compareTriplets(vector<int> a, vector<int> b) {
 
+    //Vector a contains Alice's scores in each of the 3 criteria [0,2]
+    //Vector b contains Bob's scores in each of the 3 criteria [0,2]
+
+    //create a count-controlled loop that goes through each of the 3 indices, comparing the values of a[n] and b[n].
+
+    // the greater value gets assigned a point. If the values ==, then no points are assigned. (if, else if, else?)
+
+    //Should end up with a new 2 element vector with the scores of Alice in the 0th index and Bob in the 1st.
+
+    //Return the index back to the caller. 
+
 }
 
 int main()
