@@ -18,27 +18,35 @@ vector<string> split(const string &);
 vector<int> compareTriplets(vector<int> a, vector<int> b) {
     //Vector a contains Alice's scores in each of the 3 criteria [0,2]
     //Vector b contains Bob's scores in each of the 3 criteria [0,2]
-    int indexMatchedInputVectorSize = a.size();
+    int aliceSize = a.size();
+    int bobSize = b.size();
+    bool indexMatched = false;
     vector<int> scores;
     int aliceScore = 0;
     int bobScore = 0;
 
-    //create a count-controlled loop that goes through each of the 3 indices, comparing the values of a[n] and b[n].
-    for (int i = 0; i < indexMatchedInputVectorSize; i++) {
-        int aliceTemp = a[i];
-        int bobTemp = b[i];
-
-        // the greater value gets assigned a point. If the values ==, then no points are assigned. (if, else if, else?)
-        if (aliceTemp > bobTemp) {
-            aliceScore++;
-        }
-        else if (bobTemp > aliceTemp) {
-            bobScore++;
-        }
-        else { //if scores are ==, then do nothing.
-        }
+    if (aliceSize == bobSize) {
+        indexMatched = true;
     }
 
+    if (indexMatched) {
+        //create a count-controlled loop that goes through each of the 3 indices, comparing the values of a[n] and b[n].
+        for (int i = 0; i < aliceSize; i++) {
+            int aliceTemp = a[i];
+            int bobTemp = b[i];
+
+            // the greater value gets assigned a point. If the values ==, then no points are assigned. (if, else if, else?)
+            if (aliceTemp > bobTemp) {
+                aliceScore++;
+            }
+            else if (bobTemp > aliceTemp) {
+                bobScore++;
+            }
+            else { //if scores are ==, then do nothing.
+            }
+        }
+    }
+    
     //Should end up with a new 2 element vector with the scores of Alice in the 0th index and Bob in the 1st.
     scores.push_back(aliceScore);
     scores.push_back(bobScore);
